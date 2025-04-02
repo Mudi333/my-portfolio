@@ -13,40 +13,44 @@
 
 
 body{
- 
+  font-size: larger;
+  height: 100%;
+  margin: 0;
     background-color: rgb(178, 178, 216);
     color:var(--font-color1);
     display: grid;
     gap: 1em;
-    grid-template-rows:10vh 1fr  20vh 10vh; 
+    grid-template-rows: 15vh 2fr 10vh 12vh; 
     grid-template-columns:repeat(3,1fr); 
-    grid-template-areas:
-      /* "head  head head"
-      "sect  sect side"
-      "div     .  side"
-      "foot  foot foot ";  */
+    grid-template-areas: 
       "head head head"
-      "section side side"
-      "section btn   line"
+      "main main side"
+       "btn btn btn "
       "foot foot foot";
      
   }
+  main{
+    grid-area: main;
+    margin: 40px ;
+  }
  
 
-body>*{
-    padding: var(--padding-size);
-}
+/* body>*{
+    padding: var(--padding-size);} */
+
 aside{
     grid-area: side;
 }
 
 header {
+  margin-bottom: 25px;
     grid-area:head;
     background-color: var(--header-background-color);
    
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
    
   }
   section{
@@ -70,43 +74,49 @@ header {
  
  
     img{
-    width: 550px;
-    height: 450px;
+      margin: 20px;
+    width: 600px;
+    height: 500px;
     border-radius: var(--var6);
     padding: var(--var2);
   }
 
-  .bottons{
-    grid-area: div-btn;
-    display: grid;
-    align-items: end;
-    justify-content: center;
+  .buttons{
+   grid-area: btn; 
+    display: flex;
+    justify-content:space-evenly;
+    margin: 20px;
   }
   button{
-  
-
     color: blueviolet;
-  
-        background-color:var(--button-color);
-        color: white;
-        padding: 15px 30px;
-        font-size: 18px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 5px 0 #470366;
-        transition: all 0.1s ease-in-out;
-      }
+    background-color:var(--button-color);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #470366;
+    transition: all 0.1s ease-in-out;
+    }
   
       button:active {
         box-shadow: 0 2px 0 #388E3C;
         transform: translateY(3px);
       }
       footer {
+        /* margin: 0;
+        padding: 0; */
+        padding: 20px;
+        margin-bottom: 0;
+        display: flex;
+        align-items: end;
+        justify-content: center;
         grid-area: foot;
         background-color: var(--header-background-color);
       }
       .ani-line {
+        grid-area: line;
         width: 0;
         height: 4px;
         background-color: var(--font-color1);
