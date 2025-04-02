@@ -1,0 +1,119 @@
+:root{
+    --font-color1: rgb(12, 12, 97);
+    --header-background-color:rgb(125, 98, 141); 
+    --button-color: #660d8a;
+
+    --border-width: 1px;
+    --padding-size: 15px;
+    --small-spacing: 40px;
+    --medium-spacing: 65px;
+    --large-spacing: 100px;
+    --border-radius-values: var(--medium-spacing) var(--medium-spacing) var(--var3) var(--medium-spacing);
+}
+
+
+body{
+ 
+    background-color: rgb(178, 178, 216);
+    color:var(--font-color1);
+    display: grid;
+    gap: 1em;
+    grid-template-rows:10vh 1fr  20vh 10vh; 
+    grid-template-columns:repeat(3,1fr); 
+    grid-template-areas:
+      "head  head head"
+      "sect  sect side"
+      "div     .  side"
+      "foot  foot foot "; 
+     
+  }
+ 
+
+body>*{
+    padding: var(--padding-size);
+}
+aside{
+    grid-area: side;
+}
+
+header {
+    grid-area:head;
+    background-color: var(--header-background-color);
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+  }
+  section{
+    grid-area:sect;
+    padding: var(--padding-size);
+    
+    border: var(--border-width) solid var(--menu-bar-color);
+    border-radius: var(--border-radius-values);
+    /* justify-content:center; */
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  li {
+    padding-right: 1rem;
+  }
+ 
+ 
+    img{
+    width: 550px;
+    height: 450px;
+    border-radius: var(--var6);
+    padding: var(--var2);
+  }
+
+  .bottons{
+    display: grid;
+    align-items: end;
+    justify-content: center;
+  }
+  button{
+  
+
+    color: blueviolet;
+  
+        background-color:var(--button-color);
+        color: white;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 5px 0 #470366;
+        transition: all 0.1s ease-in-out;
+      }
+  
+      button:active {
+        box-shadow: 0 2px 0 #388E3C;
+        transform: translateY(3px);
+      }
+      footer {
+        grid-area: foot;
+        background-color: var(--header-background-color);
+      }
+      .ani-line {
+        width: 0;
+        height: 4px;
+        background-color: var(--font-color1);
+        margin: 10px auto;
+        animation: growLine 5s forwards;
+        transform-origin: center;
+      }
+      
+      @keyframes growLine {
+        to {
+          width: 200px;
+        }
+      }
+
+ 
