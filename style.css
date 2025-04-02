@@ -21,10 +21,14 @@ body{
     grid-template-rows:10vh 1fr  20vh 10vh; 
     grid-template-columns:repeat(3,1fr); 
     grid-template-areas:
-      "head  head head"
+      /* "head  head head"
       "sect  sect side"
       "div     .  side"
-      "foot  foot foot "; 
+      "foot  foot foot ";  */
+      "head head head"
+      "section side side"
+      "section btn   line"
+      "foot foot foot";
      
   }
  
@@ -73,6 +77,7 @@ header {
   }
 
   .bottons{
+    grid-area: div-btn;
     display: grid;
     align-items: end;
     justify-content: center;
